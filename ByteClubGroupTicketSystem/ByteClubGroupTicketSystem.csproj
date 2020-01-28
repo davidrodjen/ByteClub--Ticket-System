@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
     <Compile Include="Options.cs" />
+    <Compile Include="TicketDB.cs" />
     <Compile Include="TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
