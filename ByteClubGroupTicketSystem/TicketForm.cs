@@ -15,6 +15,37 @@ namespace ByteClubGroupTicketSystem
         public TicketForm()
         {
             InitializeComponent();
+            OptionsForm options = new OptionsForm();
+            DialogResult result = options.ShowDialog();
+
+            //Once user is done inputting all the necessary inputs, and clicks ok
+            //Start the time
+            if (result == DialogResult.OK) 
+            {
+                TitleBarTime.Start();
+            }
+        }
+
+        /// <summary>
+        /// Display current time in the title bar. Update once per second.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TitleBarTime_Tick(object sender, EventArgs e)
+        {
+            //Grab the current time, start time and end time from the Options from
+            DateTime open = OptionsForm.UserInput.StartTime;
+            DateTime closed = OptionsForm.UserInput.EndTime;
+            DateTime currentTime = DateTime.Now;
+
+            if (currentTime < open || currentTime > closed)
+            {
+                this.Text = $"{currentTime} (Closed)";
+            }
+            else 
+            {
+                this.Text = $"{currentTime} (Open)";
+            }
         }
     }
 }

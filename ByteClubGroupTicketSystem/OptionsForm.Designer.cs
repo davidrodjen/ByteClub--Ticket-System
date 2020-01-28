@@ -50,6 +50,7 @@
             this.OkBtn.TabIndex = 16;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
+            this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // GuestsPerWindowTxt
             // 
