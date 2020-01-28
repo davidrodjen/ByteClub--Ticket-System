@@ -38,13 +38,13 @@ namespace ByteClubGroupTicketSystem
             DateTime closed = OptionsForm.UserInput.EndTime;
             DateTime currentTime = DateTime.Now;
 
-            if (currentTime < open || currentTime > closed)
+            if (currentTime < open)
             {
-                this.Text = $"{currentTime} (Closed)";
+                this.Text = $"{DateTime.Now.ToString()} (Closed)";
             }
             else 
             {
-                this.Text = $"{currentTime} (Open)";
+                this.Text = $"{DateTime.Now.ToString()} (Open)";
             }
         }
     }
