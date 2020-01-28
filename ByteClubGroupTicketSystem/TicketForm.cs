@@ -35,7 +35,6 @@ namespace ByteClubGroupTicketSystem
         {
             //Grab the current time, start time and end time from the Options from
             DateTime open = OptionsForm.UserInput.StartTime;
-            DateTime closed = OptionsForm.UserInput.EndTime;
             DateTime currentTime = DateTime.Now;
 
             if (currentTime < open)
