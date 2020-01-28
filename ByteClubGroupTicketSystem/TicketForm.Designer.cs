@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IssueTicketBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.NextEntryLabel = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.OptionsBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.TitleBarTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +161,12 @@
             this.listBox1.Size = new System.Drawing.Size(274, 160);
             this.listBox1.TabIndex = 6;
             // 
-            // Form1
+            // TitleBarTime
+            // 
+            this.TitleBarTime.Interval = 1000;
+            this.TitleBarTime.Tick += new System.EventHandler(this.TitleBarTime_Tick);
+            // 
+            // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +177,7 @@
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
-            this.Name = "Form1";
+            this.Name = "TicketForm";
             this.Text = "0:00:00";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -192,6 +199,7 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button OptionsBtn;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer TitleBarTime;
     }
 }
 
