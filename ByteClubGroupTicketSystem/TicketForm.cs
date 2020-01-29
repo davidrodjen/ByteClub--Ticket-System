@@ -24,6 +24,13 @@ namespace ByteClubGroupTicketSystem
             {
                 TitleBarTime.Start();
             }
+
+            //Display the guests with following tickets that can enter
+            GuestsEnterLabel.Text = $"{OptionsForm.UserInput.FirstTicketNumber.ToString()} - " +
+                                    $"{(OptionsForm.UserInput.GuestsPerWindow + OptionsForm.UserInput.FirstTicketNumber - 1).ToString()}";
+
+            //Display next available entry
+            NextEntryLabel.Text = DateTime.Now.AddMinutes(OptionsForm.UserInput.MinutesPerWindow).ToShortTimeString().ToString();
         }
 
         /// <summary>
