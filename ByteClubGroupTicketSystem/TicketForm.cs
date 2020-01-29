@@ -27,13 +27,13 @@ namespace ByteClubGroupTicketSystem
         }
 
         /// <summary>
-        /// Display current time in the title bar. Update once per second.
+        /// Displays current time in the title bar. Updates once per second.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TitleBarTime_Tick(object sender, EventArgs e)
         {
-            //Grab the current time, start time and end time from the Options from
+            //Grab the current time, start time from the Options from
             DateTime open = OptionsForm.UserInput.StartTime;
             DateTime currentTime = DateTime.Now;
 
