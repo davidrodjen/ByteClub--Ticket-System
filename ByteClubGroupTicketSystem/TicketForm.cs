@@ -46,5 +46,15 @@ namespace ByteClubGroupTicketSystem
                 this.Text = $"{DateTime.Now.ToString()} (Open)";
             }
         }
+
+        /// <summary>
+        /// Closes the ticket form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
