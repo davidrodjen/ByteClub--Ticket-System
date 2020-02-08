@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OkBtn = new System.Windows.Forms.Button();
+            this.SubmitBtn = new System.Windows.Forms.Button();
             this.NumGuests = new System.Windows.Forms.Label();
             this.AttractionName = new System.Windows.Forms.Label();
             this.NumGuestsCbox = new System.Windows.Forms.ComboBox();
@@ -37,16 +37,16 @@
             this.TimeSlotCbox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // OkBtn
+            // SubmitBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(62, 167);
-            this.OkBtn.Margin = new System.Windows.Forms.Padding(1);
-            this.OkBtn.Name = "OkBtn";
-            this.OkBtn.Size = new System.Drawing.Size(160, 52);
-            this.OkBtn.TabIndex = 16;
-            this.OkBtn.Text = "Submit";
-            this.OkBtn.UseVisualStyleBackColor = true;
-            this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
+            this.SubmitBtn.Location = new System.Drawing.Point(62, 167);
+            this.SubmitBtn.Margin = new System.Windows.Forms.Padding(1);
+            this.SubmitBtn.Name = "SubmitBtn";
+            this.SubmitBtn.Size = new System.Drawing.Size(160, 52);
+            this.SubmitBtn.TabIndex = 16;
+            this.SubmitBtn.Text = "Submit";
+            this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
             // 
             // NumGuests
             // 
@@ -74,6 +74,7 @@
             this.NumGuestsCbox.Name = "NumGuestsCbox";
             this.NumGuestsCbox.Size = new System.Drawing.Size(121, 21);
             this.NumGuestsCbox.TabIndex = 18;
+            this.NumGuestsCbox.SelectedIndexChanged += new System.EventHandler(this.NumGuestsCbox_SelectedIndexChanged);
             // 
             // AttractionNameCbox
             // 
@@ -82,6 +83,7 @@
             this.AttractionNameCbox.Name = "AttractionNameCbox";
             this.AttractionNameCbox.Size = new System.Drawing.Size(121, 21);
             this.AttractionNameCbox.TabIndex = 19;
+            this.AttractionNameCbox.SelectedIndexChanged += new System.EventHandler(this.AttractionNameCbox_SelectedIndexChanged);
             // 
             // TimeSlots
             // 
@@ -99,6 +101,7 @@
             this.TimeSlotCbox.Name = "TimeSlotCbox";
             this.TimeSlotCbox.Size = new System.Drawing.Size(121, 21);
             this.TimeSlotCbox.TabIndex = 21;
+            this.TimeSlotCbox.SelectedIndexChanged += new System.EventHandler(this.TimeSlotCbox_SelectedIndexChanged);
             // 
             // OptionsForm
             // 
@@ -110,7 +113,7 @@
             this.Controls.Add(this.AttractionNameCbox);
             this.Controls.Add(this.NumGuestsCbox);
             this.Controls.Add(this.AttractionName);
-            this.Controls.Add(this.OkBtn);
+            this.Controls.Add(this.SubmitBtn);
             this.Controls.Add(this.NumGuests);
             this.Name = "OptionsForm";
             this.Text = "Pass Options";
@@ -121,7 +124,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button OkBtn;
+        private System.Windows.Forms.Button SubmitBtn;
         private System.Windows.Forms.Label NumGuests;
         private System.Windows.Forms.Label AttractionName;
         private System.Windows.Forms.ComboBox NumGuestsCbox;
