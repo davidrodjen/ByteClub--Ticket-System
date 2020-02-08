@@ -15,15 +15,13 @@ namespace ByteClubGroupTicketSystem
         public TicketForm()
         {
             InitializeComponent();
-            OptionsForm options = new OptionsForm();
-            DialogResult result = options.ShowDialog();
 
-            //Once user is done inputting all the necessary inputs, and clicks ok
-            //Start the time
-            if (result == DialogResult.OK) 
-            {
-                TitleBarTime.Start();
-            }
+            ////Once user is done inputting all the necessary inputs, and clicks ok
+            ////Start the time
+            //if (result == DialogResult.OK) 
+            //{
+            //    TitleBarTime.Start();
+            //}
 
             //Display the guests with following tickets that can enter
             GuestsEnterLabel.Text = $"{OptionsForm.UserInput.FirstTicketNumber.ToString()} - " +
@@ -62,6 +60,15 @@ namespace ByteClubGroupTicketSystem
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void OptionsBtn_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Please enter ticket purchase options and information");
+            OptionsForm newOptions = new OptionsForm();
+            DialogResult dialogResult = newOptions.ShowDialog();
+
         }
     }
 }
