@@ -61,6 +61,7 @@
     <Compile Include="AddAttractionForm.Designer.cs">
       <DependentUpon>AddAttractionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attraction.cs" />
     <Compile Include="AttractionDb.cs" />
     <Compile Include="Migrations\202002080404007_AddedAttraction.cs" />
     <Compile Include="Migrations\202002080404007_AddedAttraction.Designer.cs">
@@ -93,6 +94,9 @@
     <Compile Include="TicketSystemContext.cs" />
     <EmbeddedResource Include="AddAttractionForm.resx">
       <DependentUpon>AddAttractionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAttractionForm.resx">
+      <DependentUpon>EditAttractionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
