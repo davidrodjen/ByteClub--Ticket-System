@@ -1,3 +1,7 @@
+![.NET Core](https://github.com/davidrodjen/ByteClub--Ticket-System/workflows/.NET%20Core/badge.svg)
+
+
+
 # Fast Pass Ticketing System
 
 Description:
