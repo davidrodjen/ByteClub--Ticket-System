@@ -13,7 +13,7 @@ namespace ByteClubGroupTicketSystem.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202002080404007_AddedAttraction"; }
+            get { return "202002082121410_AddedAttraction"; }
         }
         
         string IMigrationMetadata.Source

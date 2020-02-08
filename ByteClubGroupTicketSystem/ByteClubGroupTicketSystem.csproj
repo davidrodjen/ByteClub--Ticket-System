@@ -61,11 +61,27 @@
     <Compile Include="AddAttractionForm.Designer.cs">
       <DependentUpon>AddAttractionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTimeSlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTimeSlotForm.Designer.cs">
+      <DependentUpon>AddTimeSlotForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Attraction.cs" />
     <Compile Include="AttractionDb.cs" />
-    <Compile Include="Migrations\202002080404007_AddedAttraction.cs" />
-    <Compile Include="Migrations\202002080404007_AddedAttraction.Designer.cs">
-      <DependentUpon>202002080404007_AddedAttraction.cs</DependentUpon>
+    <Compile Include="EditTimeSlotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTimeSlotForm.Designer.cs">
+      <DependentUpon>EditTimeSlotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002082121410_AddedAttraction.cs" />
+    <Compile Include="Migrations\202002082121410_AddedAttraction.Designer.cs">
+      <DependentUpon>202002082121410_AddedAttraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002082123341_AddedTimeSlot.cs" />
+    <Compile Include="Migrations\202002082123341_AddedTimeSlot.Designer.cs">
+      <DependentUpon>202002082123341_AddedTimeSlot.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Options.cs" />
@@ -92,17 +108,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TicketSystemContext.cs" />
+    <Compile Include="TimeSlot.cs" />
+    <Compile Include="TimeSlotDb.cs" />
     <EmbeddedResource Include="AddAttractionForm.resx">
       <DependentUpon>AddAttractionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTimeSlotForm.resx">
+      <DependentUpon>AddTimeSlotForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAttractionForm.resx">
       <DependentUpon>EditAttractionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditTimeSlotForm.resx">
+      <DependentUpon>EditTimeSlotForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002080404007_AddedAttraction.resx">
-      <DependentUpon>202002080404007_AddedAttraction.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002082121410_AddedAttraction.resx">
+      <DependentUpon>202002082121410_AddedAttraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002082123341_AddedTimeSlot.resx">
+      <DependentUpon>202002082123341_AddedTimeSlot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
