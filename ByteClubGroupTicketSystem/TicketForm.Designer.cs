@@ -38,7 +38,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GuestsEnterLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.OptionsBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.TitleBarTime = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
@@ -47,13 +46,14 @@
             // 
             // IssueTicketBtn
             // 
-            this.IssueTicketBtn.Location = new System.Drawing.Point(34, 227);
+            this.IssueTicketBtn.Location = new System.Drawing.Point(117, 233);
             this.IssueTicketBtn.Margin = new System.Windows.Forms.Padding(1);
             this.IssueTicketBtn.Name = "IssueTicketBtn";
-            this.IssueTicketBtn.Size = new System.Drawing.Size(112, 23);
+            this.IssueTicketBtn.Size = new System.Drawing.Size(98, 23);
             this.IssueTicketBtn.TabIndex = 11;
             this.IssueTicketBtn.Text = "Issue Ticket";
             this.IssueTicketBtn.UseVisualStyleBackColor = true;
+            this.IssueTicketBtn.Click += new System.EventHandler(this.IssueTicketBtn_Click);
             // 
             // groupBox2
             // 
@@ -134,7 +134,7 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(208, 433);
+            this.ExitBtn.Location = new System.Drawing.Point(117, 446);
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(1);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(98, 23);
@@ -143,20 +143,10 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // OptionsBtn
-            // 
-            this.OptionsBtn.Location = new System.Drawing.Point(34, 433);
-            this.OptionsBtn.Margin = new System.Windows.Forms.Padding(1);
-            this.OptionsBtn.Name = "OptionsBtn";
-            this.OptionsBtn.Size = new System.Drawing.Size(98, 23);
-            this.OptionsBtn.TabIndex = 7;
-            this.OptionsBtn.Text = "Options";
-            this.OptionsBtn.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(34, 262);
+            this.listBox1.Location = new System.Drawing.Point(34, 273);
             this.listBox1.Margin = new System.Windows.Forms.Padding(1);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 160);
@@ -171,15 +161,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 468);
+            this.ClientSize = new System.Drawing.Size(340, 479);
             this.Controls.Add(this.IssueTicketBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.OptionsBtn);
             this.Controls.Add(this.listBox1);
             this.Name = "TicketForm";
             this.Text = "0:00:00";
+            this.Load += new System.EventHandler(this.TicketForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -198,7 +188,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label GuestsEnterLabel;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button OptionsBtn;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Timer TitleBarTime;
     }
