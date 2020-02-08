@@ -16,7 +16,7 @@ namespace ByteClubGroupTicketSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TicketForm());
+            Application.Run(new MainForm());
         }
     }
 }
