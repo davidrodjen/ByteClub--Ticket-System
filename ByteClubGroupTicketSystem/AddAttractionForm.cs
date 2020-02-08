@@ -25,24 +25,35 @@ namespace ByteClubGroupTicketSystem
         /// <param name="e"></param>
         private void AddAttractionNameBtn_Click(object sender, EventArgs e)
         {
-            //Create an attraction object
-            Attraction a = new Attraction() 
-            {
-                AttractionName = AttractionNameTxt.Text
-            };
+            if (IsPresent() == true) 
+            {            
+                //Create an attraction object
+                Attraction a = new Attraction() 
+                {
+                    AttractionName = AttractionNameTxt.Text
+                };
 
-            try
-            {
-                AttractionDb.Add(a);
-                MessageBox.Show("Attraction Successfully added");
-                DialogResult = DialogResult.OK;
-            }
-            catch 
-            {
-                MessageBox.Show("We're currently having server issues");
+                try
+                {
+                    AttractionDb.Add(a);
+                    MessageBox.Show("Attraction successfully added");
+                    DialogResult = DialogResult.OK;
+                }
+                catch 
+                {
+                    MessageBox.Show("We're currently having server issues");
+                }
             }
         }
 
-        //TODO: Add input validation
+        private bool IsPresent()
+        {
+            if (string.IsNullOrWhiteSpace(AttractionNameTxt.Text)) 
+            {
+                MessageBox.Show("Cannot submit an empty form");
+                return false;
+            }
+            return true;
+        }
     }
 }

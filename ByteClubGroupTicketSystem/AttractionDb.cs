@@ -41,7 +41,7 @@ namespace ByteClubGroupTicketSystem
         }
 
         /// <summary>
-        /// Deletes the selected attraction to the database
+        /// Deletes the selected attraction from the database
         /// </summary>
         /// <param name="a"></param>
         public static void Delete(Attraction a) 

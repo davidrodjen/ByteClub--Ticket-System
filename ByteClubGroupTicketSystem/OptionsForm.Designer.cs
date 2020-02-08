@@ -136,6 +136,7 @@
             this.DeleteTimeSlotBtn.TabIndex = 27;
             this.DeleteTimeSlotBtn.Text = "Delete";
             this.DeleteTimeSlotBtn.UseVisualStyleBackColor = true;
+            this.DeleteTimeSlotBtn.Click += new System.EventHandler(this.DeleteTimeSlotBtn_Click);
             // 
             // EditTimeSlotBtn
             // 
@@ -145,6 +146,7 @@
             this.EditTimeSlotBtn.TabIndex = 26;
             this.EditTimeSlotBtn.Text = "Edit";
             this.EditTimeSlotBtn.UseVisualStyleBackColor = true;
+            this.EditTimeSlotBtn.Click += new System.EventHandler(this.EditTimeSlotBtn_Click);
             // 
             // AddTimeSlotBtn
             // 
@@ -154,6 +156,7 @@
             this.AddTimeSlotBtn.TabIndex = 25;
             this.AddTimeSlotBtn.Text = "Add Time Slot";
             this.AddTimeSlotBtn.UseVisualStyleBackColor = true;
+            this.AddTimeSlotBtn.Click += new System.EventHandler(this.AddTimeSlotBtn_Click);
             // 
             // NumberOfGuestsTxt
             // 
