@@ -20,6 +20,7 @@ namespace ByteClubGroupTicketSystem
         private void OptionsForm_Load(object sender, EventArgs e)
         {
             PopulateAttractionList();
+            PopulateTimeSlotList();
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)
@@ -43,21 +44,6 @@ namespace ByteClubGroupTicketSystem
             else 
             {
                 MessageBox.Show("No attraction was added");
-            }
-        }
-
-        private void PopulateAttractionList()
-        {
-            //Create an allAttraction list that is opoulated from the database
-            List<Attraction> allAttractions = AttractionDb.GetAllAttractions();
-
-            //Clear the list before adding to avoid duplicates
-            AttractionNameCbox.Items.Clear();
-
-            //Add all the attractions in the attraction combo box
-            foreach (Attraction a in allAttractions)
-            {
-                AttractionNameCbox.Items.Add(a);
             }
         }
 
@@ -125,6 +111,124 @@ namespace ByteClubGroupTicketSystem
                 {
                     MessageBox.Show("No attractions deleted");
                 }
+            }
+        }
+
+        private void PopulateAttractionList()
+        {
+            //Create an allAttraction list that is opoulated from the database
+            List<Attraction> allAttractions = AttractionDb.GetAllAttractions();
+
+            //Clear the list before adding to avoid duplicates
+            AttractionNameCbox.Items.Clear();
+
+            //Add all the attractions in the attraction combo box
+            foreach (Attraction a in allAttractions)
+            {
+                AttractionNameCbox.Items.Add(a);
+            }
+        }
+
+        private void AddTimeSlotBtn_Click(object sender, EventArgs e)
+        {
+            //Create an add attraction object
+            AddTimeSlotForm addTimeSlot = new AddTimeSlotForm();
+
+            //Display the add attraction form
+            DialogResult result = addTimeSlot.ShowDialog();
+
+            //If user adds an attraction
+            if (result == DialogResult.OK)
+            {
+                PopulateTimeSlotList();
+            }
+            else
+            {
+                MessageBox.Show("No attraction was added");
+            }
+        }
+
+        private void EditTimeSlotBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TimeSlotCbox.Text))
+            {
+                MessageBox.Show("Please select a time slot to edit");
+                return;
+            }
+
+            TimeSlot timeSlot = (TimeSlot)TimeSlotCbox.SelectedItem;
+
+            EditTimeSlotForm editTimeSlot = new EditTimeSlotForm(timeSlot);
+            DialogResult result = editTimeSlot.ShowDialog();
+
+            //If the attraction was successfully updated, display a success message
+            //and refresh the combo box
+            if (result == DialogResult.OK)
+            {
+                TimeSlotCbox.Text = "";
+                MessageBox.Show("Time slot was successfully updated");
+                PopulateTimeSlotList();
+            }
+            else
+            {
+                MessageBox.Show("Nothing was edited");
+            }
+        }
+
+        private void DeleteTimeSlotBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TimeSlotCbox.Text))
+            {
+                MessageBox.Show("Please select a time slot to delete");
+                return;
+            }
+
+            //Grab the selected attraction
+            TimeSlot selectedTimeSlot = (TimeSlot)TimeSlotCbox.SelectedItem;
+
+            string message = $"Are you sure you want to delete {selectedTimeSlot.StartTime.ToShortTimeString()} - " +
+                             $"{selectedTimeSlot.EndTime.ToShortTimeString()}?";
+
+            DialogResult result = MessageBox.Show(text: message,
+                                                  caption: "Delete?",
+                                                  buttons: MessageBoxButtons.YesNo,
+                                                  icon: MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    //Remove in database
+                    TimeSlotDb.Delete(selectedTimeSlot);
+
+                    //Remove it from the list
+                    TimeSlotCbox.Items.Remove(selectedTimeSlot);
+
+                    MessageBox.Show("Time slot deleted");
+
+                    PopulateTimeSlotList();
+
+                    TimeSlotCbox.Text = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No time slots deleted");
+                }
+            }
+        }
+
+        private void PopulateTimeSlotList()
+        {
+            //Create an allAttraction list that is opoulated from the database
+            List<TimeSlot> allTimeSlots = TimeSlotDb.GetAllTimeSlots();
+
+            //Clear the list before adding to avoid duplicates
+            TimeSlotCbox.Items.Clear();
+
+            //Add all the attractions in the attraction combo box
+            foreach (TimeSlot t in allTimeSlots)
+            {
+                TimeSlotCbox.Items.Add(t);
             }
         }
     }

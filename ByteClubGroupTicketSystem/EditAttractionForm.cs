@@ -28,18 +28,31 @@ namespace ByteClubGroupTicketSystem
 
         private void EditAttractionNameBtn_Click(object sender, EventArgs e)
         {
-            //Grab the newly edited attraction's information
-            existingAttraction.AttractionName = AttractionNameTxt.Text;
+            if (IsPresent() == true) 
+            {           
+                //Grab the newly edited attraction's information
+                existingAttraction.AttractionName = AttractionNameTxt.Text;
 
-            try
-            {
-                AttractionDb.Update(existingAttraction);
-                DialogResult = DialogResult.OK;
+                try
+                {
+                    AttractionDb.Update(existingAttraction);
+                    DialogResult = DialogResult.OK;
+                }
+                catch (ArgumentException) 
+                {
+                    MessageBox.Show("Attraction no longer exists");
+                }
             }
-            catch (ArgumentException) 
+        }
+
+        private bool IsPresent()
+        {
+            if (string.IsNullOrWhiteSpace(AttractionNameTxt.Text)) 
             {
-                MessageBox.Show("Attraction no longer exists");
+                MessageBox.Show("Cannot submit an empty form");
+                return false;
             }
+            return true;
         }
     }
 }
