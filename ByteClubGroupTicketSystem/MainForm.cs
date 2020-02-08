@@ -28,5 +28,11 @@ namespace ByteClubGroupTicketSystem
             OptionsForm form = new OptionsForm();
             form.ShowDialog();
         }
+
+        private void OptionsBtn_Click(object sender, EventArgs e)
+        {
+            OptionsForm options = new OptionsForm();
+            options.ShowDialog();
+        }
     }
 }
