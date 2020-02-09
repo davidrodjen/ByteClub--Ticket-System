@@ -164,6 +164,7 @@
             this.NumberOfGuestsTxt.Name = "NumberOfGuestsTxt";
             this.NumberOfGuestsTxt.Size = new System.Drawing.Size(228, 20);
             this.NumberOfGuestsTxt.TabIndex = 28;
+            this.NumberOfGuestsTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OptionsForm
             // 
