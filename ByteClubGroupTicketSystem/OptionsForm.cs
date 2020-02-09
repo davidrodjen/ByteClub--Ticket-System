@@ -21,11 +21,13 @@ namespace ByteClubGroupTicketSystem
         {
             PopulateAttractionList();
             PopulateTimeSlotList();
+            AttractionNameCbox.DropDownStyle = ComboBoxStyle.DropDownList;
+            TimeSlotCbox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            if (AttractionNameCbox.Text != "" && TimeSlotCbox.Text != "" && NumberOfGuestsTxt.Text != "")
+            if (IsPresent() == true && IsNumberOfGuestsAValidInteger() == true)
             {
                 //Grab the selected attraction
                 Attraction a = (Attraction)AttractionNameCbox.SelectedItem;
@@ -52,10 +54,30 @@ namespace ByteClubGroupTicketSystem
                     MessageBox.Show("We are having server issues");
                 }
             }
-            else 
+        }
+
+        private bool IsPresent()
+        {
+            if (string.IsNullOrWhiteSpace(AttractionNameCbox.Text) ||
+                string.IsNullOrWhiteSpace(TimeSlotCbox.Text) || 
+                string.IsNullOrWhiteSpace(NumberOfGuestsTxt.Text)) 
             {
-                MessageBox.Show("Please fill out all of the fields");
+                MessageBox.Show("Please fill out all of the required fields");
+                return false;
             }
+            return true;
+        }
+
+        private bool IsNumberOfGuestsAValidInteger()
+        {
+            //Used to test if user input for number of guests is a valid integer
+            int validInteger;
+            if (!int.TryParse(NumberOfGuestsTxt.Text, out validInteger)) 
+            {
+                MessageBox.Show("Please enter a valid integer for the number of guests");
+                return false;
+            }
+            return true;
         }
 
         private void AddAttractionBtn_Click(object sender, EventArgs e)
