@@ -83,8 +83,12 @@
     <Compile Include="Migrations\202002082123341_AddedTimeSlot.Designer.cs">
       <DependentUpon>202002082123341_AddedTimeSlot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002090624540_AddedOption.cs" />
+    <Compile Include="Migrations\202002090624540_AddedOption.Designer.cs">
+      <DependentUpon>202002090624540_AddedOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="Option.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="EditAttractionForm.cs">
       <SubType>Form</SubType>
@@ -98,6 +102,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OptionDb.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002082123341_AddedTimeSlot.resx">
       <DependentUpon>202002082123341_AddedTimeSlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002090624540_AddedOption.resx">
+      <DependentUpon>202002090624540_AddedOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>

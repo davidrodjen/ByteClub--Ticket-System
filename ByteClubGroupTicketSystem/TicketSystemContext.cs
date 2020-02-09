@@ -23,5 +23,6 @@ namespace ByteClubGroupTicketSystem
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<Attraction> Attractions { get; set; }
         public virtual DbSet<TimeSlot> TimeSlots { get; set; }
+        public virtual DbSet<Option> Options { get; set; }
     }
 }

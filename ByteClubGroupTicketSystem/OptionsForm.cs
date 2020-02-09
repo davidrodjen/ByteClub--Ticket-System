@@ -25,7 +25,37 @@ namespace ByteClubGroupTicketSystem
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (AttractionNameCbox.Text != "" && TimeSlotCbox.Text != "" && NumberOfGuestsTxt.Text != "")
+            {
+                //Grab the selected attraction
+                Attraction a = (Attraction)AttractionNameCbox.SelectedItem;
+
+                //Grab the selected time slot
+                TimeSlot t = (TimeSlot)TimeSlotCbox.SelectedItem;
+
+                //Create the option object
+                Option o = new Option()
+                {
+                    Attraction = a.AttractionName,
+                    TimeSlot = t.StartTime,
+                    NumberOfGuests = Convert.ToInt32(NumberOfGuestsTxt.Text)
+                };
+
+                try
+                {
+                    OptionDb.Add(o);
+                    MessageBox.Show("Option was successfully added");
+                    DialogResult = DialogResult.OK;
+                }
+                catch
+                {
+                    MessageBox.Show("We are having server issues");
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Please fill out all of the fields");
+            }
         }
 
         private void AddAttractionBtn_Click(object sender, EventArgs e)
